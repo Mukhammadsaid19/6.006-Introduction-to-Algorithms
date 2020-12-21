@@ -1,7 +1,5 @@
 package BST;
 
-import java.util.NoSuchElementException;
-
 public class BST<Key extends Comparable<Key>> {
     private Node root;
 
@@ -18,11 +16,16 @@ public class BST<Key extends Comparable<Key>> {
         public String toString() { return String.valueOf(this.key); }
     }
 
-
     public BST() {
         this.root = null;
     }
 
+    /**
+     * Inserts Node z into BST.
+     * O(h) time | O(1) space
+     * @param   z   Node that is being inserted into BST
+     *
+     */
     public void insert(Node z) {
         Node y = null;
         Node x = root;
@@ -189,7 +192,7 @@ public class BST<Key extends Comparable<Key>> {
 
     public static void main(String[] args) {
         BST<Integer> tree = new BST<Integer>();
-        tree.insert(8, 6, 10, 5, 7, 8, 9, 12);
-        System.out.println(tree.successor(6));
+        tree.insert(8, 6, 10, 5, 7, 8, 9, 12, -1, -100);
+        tree.inOrderTreeWalk();
     }
 }
